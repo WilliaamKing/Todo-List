@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Ceviche+One&display=swap');
 
 .todo{
-    background-color: #ffffff;
     width: 60vw;
     min-height: 75vh;
+
     margin: 50px auto;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    background-color: #ffffff;
 }
 
 .todo h2{
@@ -14,7 +20,7 @@
 }
 
 .todo .inputs{
-    display: flex;
+   display: flex;
    justify-content: space-around;
    
    padding: 0 10px;
@@ -27,4 +33,10 @@
 
 .todo .data{
     min-height: 55vh;
+}
+
+@media screen and (max-width: 480px){
+    .todo{
+        width: 85vw;
+    }
 }

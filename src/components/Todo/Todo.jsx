@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Input, Button} from 'antd';
 import {connect} from 'react-redux';
-import {addTask} from '../../actions/actionCreator';
+import {addTask, removeTask, changeStatus} from '../../actions/actionCreator';
 import Footer from './Footer/Footer'; 
 import Section from './Section/Section';
 import './style.css';
@@ -14,30 +14,37 @@ const Todo = (props) =>{
 
     const handleButtonClick = () =>{
         const {addTask} = props ;
-        addTask(props.tasks.length+1, taskTest);
-        setTaskTest('');
-    }
 
-    const addTask = ({key}) =>{
-        if(taskTest.length > 3 && key === 'Enter'){
-            handleButtonClick();
+        if(taskTest.length > 3){
+            addTask(new Date().getTime(), taskTest, false);
+            setTaskTest('');
+
+            document.getElementById('addInput').value = ' ';
         }
     }
 
+    const addTask = ({key}) =>{
+        if(key === 'Enter')
+            handleButtonClick();
+    }
 
     return (
         <div className = 'todo'>
-            <h2>You must do it</h2>
+            <div className = 'content'>
+                <h2>You must do it</h2>
 
-            <div className = 'inputs'>
-                <Input id='addInput' placeholder='Write what you must do' onKeyPress  = {addTask} onChange = {handleInputChange}/>
-                <Button onClick = {handleButtonClick} type="primary" className = 'addButton'>Add</Button>
+                <div className = 'inputs'>
+                    <Input id='addInput' placeholder='Write what you must do' onKeyPress  = {addTask} onChange = {handleInputChange}/>
+                    <Button onClick = {handleButtonClick} type="primary" className = 'addButton'>Add</Button>
+                </div>
+
+                <div className = 'data'>
+                    {props.tasks.map ((el,index) => <Section number = {index} name = {el.name} status = {el.status}
+                                                            removeTask = {props.removeTask} changeStatus = {props.changeStatus} 
+                                                            id = {el.number}/>)}
+                </div>
             </div>
-
-            <div className = 'data'>
-                {props.tasks.map (el => <Section number = {el.number} name = {el.name}/>)}
-            </div>
-
+            
             <Footer />
         </div>
     );
@@ -45,4 +52,4 @@ const Todo = (props) =>{
 
 export default connect (state => ({
     tasks: state.tasks,
-}),{addTask})(Todo);
+}),{addTask, changeStatus, removeTask})(Todo);

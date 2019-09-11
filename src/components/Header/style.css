@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Yesteryear&display=swap');
+
+.head{
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #24292e;
+    color: #ffffff;
+}
+
+.head .title{
+    font-family: 'Yesteryear', cursive;
+    font-size: 36px;
+}

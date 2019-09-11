@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Ceviche+One&display=swap');
+
+.todo{
+    background-color: #ffffff;
+    width: 60vw;
+    min-height: 75vh;
+    margin: 50px auto;
+}
+
+.todo h2{
+    font-family: 'Ceviche One', cursive;
+    font-size: 28px;
+    text-align: center;
+}
+
+.todo .inputs{
+    display: flex;
+   justify-content: space-around;
+   
+   padding: 0 10px;
+   padding-bottom: 10px;
+}
+
+.todo .inputs .addButton{
+    margin-left: 10px;
+}
+
+.todo .data{
+    min-height: 55vh;
+}

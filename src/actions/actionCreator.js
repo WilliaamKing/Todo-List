@@ -1,4 +1,4 @@
-import {ADD_TASK, REMOVE_TASK, CHANGE_STATUS} from '../constants';
+import {ADD_TASK, REMOVE_TASK, CHANGE_STATUS, CHANGE_FILTER} from '../constants';
 
 export const addTask = (number, name, completed) => ({
     type: ADD_TASK,
@@ -15,4 +15,9 @@ export const removeTask = number =>({
 export const changeStatus = number =>({
     type: CHANGE_STATUS,
     number,
-})
+});
+
+export const changeFilter = activeFilter =>({
+    type: CHANGE_FILTER,
+    activeFilter,
+});

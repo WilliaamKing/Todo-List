@@ -13,6 +13,25 @@
     background-color: #ffffff;
 }
 
+.todo .filter{
+    display: flex;
+    justify-content: center; 
+}
+
+.todo .filter p{
+    margin: 5px 2px;
+    margin-bottom: 0px;
+    padding: 2px 5px;
+
+    font-family: 'Chilanka', cursive;
+    font-size: 10px;
+}
+
+.todo .filter p:hover{
+    box-shadow: 0 0 3px #02b1d9;
+    cursor: pointer;
+}
+
 .todo h2{
     font-family: 'Ceviche One', cursive;
     font-size: 28px;

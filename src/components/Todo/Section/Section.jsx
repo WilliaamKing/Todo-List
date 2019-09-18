@@ -23,8 +23,8 @@ const Section = (props) =>{
             </div>
 
             <div id='status'>
-                <Select className = 'select' defaultValue = 'not completed' onChange = {resetStatus}>
-                    <Option value= 'notCompleted'>not completed</Option>
+                <Select className = 'select' value = {(props.status)? 'completed': 'noCompleted'} onChange = {resetStatus}>
+                    <Option value= 'noCompleted'>no completed</Option>
                     <Option value= 'completed'>completed</Option>
                 </Select>
             </div>

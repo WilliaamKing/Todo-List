@@ -27,6 +27,7 @@
 
 .actionSection>div#name{
     flex-basis: 60%;
+    max-width: 60%;
 }
 
 .actionSection>div#status, .actionSection>div#actions{
@@ -48,5 +49,6 @@
 
     .actionSection>div#name{
         flex-basis: 90%;
+        max-width: 90%;
     }
 }
